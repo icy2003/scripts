@@ -1,0 +1,25 @@
+{
+    "name": "icy2003/scripts",
+    "description": "icy2003's scripts",
+    "type": "project",
+    "keywords": [
+        "icy2003",
+        "scripts"
+    ],
+    "require": {
+        "icy2003/php": "dev-master"
+    },
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "icy2003",
+            "email": "2317216477@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "icy2003\\scripts\\": "src/"
+        }
+    }
+}
