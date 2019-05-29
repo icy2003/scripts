@@ -1,7 +1,7 @@
 {
     "name": "icy2003/scripts",
     "description": "icy2003's scripts",
-    "type": "project",
+    "type": "library",
     "keywords": [
         "icy2003",
         "scripts"
