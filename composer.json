@@ -7,7 +7,10 @@
         "scripts"
     ],
     "require": {
-        "icy2003/php": "dev-master"
+        "icy2003/php": "~1.0"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
     },
     "license": "BSD-2-Clause",
     "authors": [
