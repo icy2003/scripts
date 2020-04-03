@@ -9,7 +9,7 @@
 namespace icy2003\scripts\generators;
 
 use icy2003\php\I;
-use icy2003\php\ihelpers\File;
+use icy2003\php\icomponents\file\LocalFile;
 use icy2003\php\ihelpers\Strings;
 use icy2003\scripts\Scripts;
 
@@ -192,7 +192,7 @@ EOT
         }
         $this->_files[] = $this->_activeRecordTemplate;
         foreach ($this->_tables as $table) {
-            $modelName = ucfirst(Strings::underline2camel($table) . $this->_type);
+            $modelName = ucfirst(Strings::toCamel($table) . $this->_type);
             $namespaceString = implode(PHP_EOL, $namespaceArray);
             $this->_files[] = [
                 $modelName . '.php',
@@ -227,13 +227,14 @@ EOT
             ];
         }
         $dir = I::getAlias('@icy2003/scripts_runtime/generators-Yii2Model');
-        $this->_forceUpdate && File::deleteDir($dir);
-        File::createDir($dir);
-        array_map(function ($file) use ($dir) {
+        $local = new LocalFile();
+        $this->_forceUpdate && $local->deleteDir($dir);
+        $local->createDir($dir);
+        foreach ($this->_files as $file) {
             list($path, $content) = $file;
-            if (!File::fileExists($dir . '/' . $path)) {
+            if (!$local->isFile($dir . '/' . $path)) {
                 file_put_contents($dir . '/' . $path, $content);
             }
-        }, $this->_files);
+        }
     }
 }

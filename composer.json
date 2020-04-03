@@ -7,20 +7,24 @@
         "scripts"
     ],
     "require": {
-        "icy2003/php": "~1.0"
+        "icy2003/php": "dev-dev"
     },
     "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "icy2003",
-            "email": "2317216477@qq.com",
-            "homepage": "https://www.icy2003.com"
-        }
-    ],
+    "authors": [{
+        "name": "icy2003",
+        "email": "2317216477@qq.com",
+        "homepage": "https://www.icy2003.com"
+    }],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "icy2003\\scripts\\": "src/"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
         }
     }
 }
